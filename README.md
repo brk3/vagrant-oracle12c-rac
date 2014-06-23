@@ -47,6 +47,7 @@ $ vagrant plugin install vagrant-vbguest
 Clone this repository to the local directory.
 * Vagrantfile: uses CentOS 6.5, memory=2048M, 10GB shared disk, reads setup.sh
 * setup.sh: converts into Oracle Linux, installs necessary packages, creates users
+* ssh.expect: ssh user equivalence setup script
 * *.rsp: response files for GI/DB/DBCA
 
 ```
@@ -98,7 +99,7 @@ Linux version 2.6.39-400.215.3.el6uek.x86_64 (mockbuild@ca-build44.us.oracle.com
 Command line: ro root=/dev/mapper/VolGroup-lv_root rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD rd_LVM_LV=VolGroup/lv_swap SYSFONT=latarcyrheb-sun16 rd_LVM_LV=VolGroup/lv_root  KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb quiet numa=off transparent_hugepage=never
 ```
 
-## Cluster Install (as grid)
+## Install Clusterware (as grid)
 
 Install Clusterware.
 
