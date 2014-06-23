@@ -256,3 +256,30 @@ ora.orcl.db
       2        ONLINE  ONLINE       node2                    Open,STABLE
 --------------------------------------------------------------------------------
 ```
+
+Check connection.
+
+```
+[oracle@node1 ~]$ sqlplus system/oracle@node2-vip:1521/orcl
+
+SQL*Plus: Release 12.1.0.1.0 Production on Mon Jun 23 08:11:06 2014
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.1.0.1.0 - 64bit Production
+With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,
+Advanced Analytics and Real Application Testing options
+
+SQL> select * from dual;
+
+D
+-
+X
+
+SQL> exit
+Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.1.0 - 64bit Production
+With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,
+Advanced Analytics and Real Application Testing options
+```
