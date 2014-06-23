@@ -9,10 +9,12 @@ as of 6/23/2014
 
 ## Setup
 
-* Host1, Host2
+* node1, node2
   * Oracle Linux 6.5 (converted from CentOS6.5)
   * oracle-rdbms-server-12cR1-preinstall
   * Unbreakable Enterprise Kernel
+  * Memory: 2GB each
+  * Shared Disk: 10GB (uses ASM)
 
 ```
 192.168.101.11  node1
@@ -47,7 +49,7 @@ $ vagrant plugin install vagrant-vbguest
 ```
 
 Clone this repository to the local directory.
-* Vagrantfile: uses CentOS 6.5, memory=2048M, 10GB shared disk, reads setup.sh
+* Vagrantfile: uses CentOS 6.5, reads setup.sh
 * setup.sh: converts into Oracle Linux, installs necessary packages, creates users
 * ssh.expect: ssh user equivalence setup script
 * *.rsp: response files for GI/DB/DBCA
