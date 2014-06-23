@@ -36,7 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "setup.sh"
 
   # proxy
-  config.proxy.http     = "http://www-proxy.jp.oracle.com:80"
-  config.proxy.https    = "http://www-proxy.jp.oracle.com:80"
-  config.proxy.no_proxy = "localhost,127.0.0.1"
+  #config.proxy.http     = "http://host:port"
+  #config.proxy.https    = "http://host:port"
+  #config.proxy.no_proxy = "localhost,127.0.0.1"
 end
