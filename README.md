@@ -3,6 +3,8 @@ vagrant-oracle12c-rac
 
 Vagrant + Oracle Linux 6.5 + Oracle Database 12cR1 (Enterprise Edition) RAC setup.  Does not include the GI/DB binary.  You need to download those from the official site beforehand.
 
+All OS setup is done automatically, but GI/DB install must be done manually.  You could make a simple shell script to do that as well, but do you REALLY want to?
+
 as of 6/23/2014
 
 ## Setup
