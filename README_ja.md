@@ -311,3 +311,14 @@ Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.1.0 - 64
 With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,
 Advanced Analytics and Real Application Testing options
 ```
+
+## FYI
+
+Virtualbox環境だとVKTMバックグラウンド・プロセスが`gettimeofday()`を連発してしまい、平常時でもCPU負荷が高騰する。
+これを抑制するには以下を実行してリブート。
+本番環境では絶対にやってはいけない。
+
+```
+(DB and ASM)
+SQL> alter system set "_high_priority_processes"='' scope=spfile;
+```
