@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node2.vm.network :private_network, ip: "192.168.102.12"
     node2.vm.provider :virtualbox do |vb|
       vb.memory = 2048
-      vb.customize ["modifyvm", :id, "--groups", "/rac"]
+      vb.customize ["modifyvm", :id, "--groups", "/rac12cR1"]
       vb.customize ["createhd", "--filename", "shared.vdi", "--size", 10*1024, "--variant", "fixed"]
       vb.customize ["modifyhd", "shared.vdi", "--type", "shareable"]
       vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "shared.vdi"]
@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node1.vm.network :private_network, ip: "192.168.102.11"
     node1.vm.provider :virtualbox do |vb|
       vb.memory = 2048
-      vb.customize ["modifyvm", :id, "--groups", "/rac"]
+      vb.customize ["modifyvm", :id, "--groups", "/rac12cR1"]
       vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port", 1, "--device", 0, "--type", "hdd", "--medium", "shared.vdi"]
     end
   end
