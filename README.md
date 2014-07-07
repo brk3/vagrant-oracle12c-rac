@@ -99,8 +99,6 @@ $ vagrant reload
 
 $ vagrant ssh node1
 
-Last login: Mon Jun 23 05:34:27 2014 from 10.0.2.2
-
 [vagrant@node1 ~]$ dmesg | more
 Initializing cgroup subsys cpuset
 Initializing cgroup subsys cpu
