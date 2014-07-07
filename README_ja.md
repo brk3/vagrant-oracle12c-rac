@@ -99,8 +99,6 @@ $ vagrant reload
 
 $ vagrant ssh node1
 
-Last login: Mon Jun 23 05:34:27 2014 from 10.0.2.2
-
 [vagrant@node1 ~]$ dmesg | more
 Initializing cgroup subsys cpuset
 Initializing cgroup subsys cpu
@@ -244,7 +242,30 @@ DBを作成する。
 ```
 [oracle@node1 ~]$ dbca -silent -createDatabase -responseFile /vagrant/dbca.rsp
 
-  :
+Copying database files
+1% complete
+3% complete
+9% complete
+15% complete
+21% complete
+27% complete
+30% complete
+Creating and starting Oracle instance
+32% complete
+36% complete
+40% complete
+44% complete
+45% complete
+48% complete
+50% complete
+Creating cluster database views
+52% complete
+70% complete
+Completing Database Creation
+73% complete
+76% complete
+85% complete
+94% complete
 100% complete
 Look at the log file "/u01/oracle/cfgtoollogs/dbca/orcl/orcl.log" for further details.
 ```
