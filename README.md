@@ -1,11 +1,16 @@
 vagrant-oracle12c-rac
 =====================
 
-Vagrant + Oracle Linux 6.5 + Oracle Database 12cR1 (Enterprise Edition) RAC setup.  Does not include the GI/DB binary.  You need to download those from the official site beforehand.
+[Japanese version here](README_ja.md)
 
-All OS setup is done automatically, but GI/DB install must be done manually.  You could make a simple shell script to do that as well, but do you REALLY want to?
+Vagrant + Oracle Linux 6.5 + Oracle Database 12cR1 (Enterprise Edition) RAC setup.
+OS (+packages, users) setup is fully automated, GI/DB setup is done via silent install (no X).
 
-as of 6/23/2014
+You need to download Grid Infrastructure, Database binary separately.
+
+Silent install part can be a shell script if you wish, but I prefer to run them manually.
+
+as of 7/7/2014
 
 ## Setup
 
@@ -222,7 +227,7 @@ Check status.
 
 [oracle@node1 ~]$ sqlplus / as sysdba
 
-SQL*Plus: Release 12.1.0.1.0 Production on Mon Jun 23 07:01:02 2014
+SQL*Plus: Release 12.1.0.1.0 Production on Mon Jul 7 06:01:08 2014
 
 Copyright (c) 1982, 2013, Oracle.  All rights reserved.
 
@@ -239,7 +244,30 @@ Create Database.
 ```
 [oracle@node1 ~]$ dbca -silent -createDatabase -responseFile /vagrant/dbca.rsp
 
-  :
+Copying database files
+1% complete
+3% complete
+9% complete
+15% complete
+21% complete
+27% complete
+30% complete
+Creating and starting Oracle instance
+32% complete
+36% complete
+40% complete
+44% complete
+45% complete
+48% complete
+50% complete
+Creating cluster database views
+52% complete
+70% complete
+Completing Database Creation
+73% complete
+76% complete
+85% complete
+94% complete
 100% complete
 Look at the log file "/u01/oracle/cfgtoollogs/dbca/orcl/orcl.log" for further details.
 ```
@@ -264,7 +292,7 @@ Check connection.
 ```
 [oracle@node1 ~]$ sqlplus system/oracle@node2-vip:1521/orcl
 
-SQL*Plus: Release 12.1.0.1.0 Production on Mon Jun 23 08:11:06 2014
+SQL*Plus: Release 12.1.0.1.0 Production on Mon Jul 7 06:53:49 2014
 
 Copyright (c) 1982, 2013, Oracle.  All rights reserved.
 
