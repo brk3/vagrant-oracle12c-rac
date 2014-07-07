@@ -311,3 +311,13 @@ Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.1.0 - 64
 With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,
 Advanced Analytics and Real Application Testing options
 ```
+
+## FYI
+
+VKTM background process consumes extra CPU under Virtualbox, because it executes `gettimeofday()` frequently.
+You can execute below to disable this.  But NEVER do this in the production system.
+
+```
+(DB and ASM)
+SQL> alter system set "_high_priority_processes"='' scope=spfile;
+```
