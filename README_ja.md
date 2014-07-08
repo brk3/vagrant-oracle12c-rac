@@ -31,7 +31,23 @@ as of 7/7/2014
 192.168.102.12  node2-priv
 ```
 
-## 準備
+## ダウンロード
+
+Grid Infrastructure / Database のバイナリを以下からダウンロード。"grid"と"database"というサブディレクトリになるはず。
+
+http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
+
+Linux x86-64 → "See All" を選択
+
+* "database" サブディレクトリ
+  * linuxamd64_12c_database_1of2.zip
+  * linuxamd64_12c_database_2of2.zip
+
+* "grid" サブディレクトリ
+  * linuxamd64_12c_grid_1of2.zip
+  * linuxamd64_12c_grid_2of2.zip
+
+## OSインストール
 
 プロキシを利用する必要がある場合、まず vagrant-proxyconf をインストールする。
 
@@ -53,11 +69,7 @@ VirtualBox plugin をインストールする。
 $ vagrant plugin install vagrant-vbguest
 ```
 
-本レポジトリをローカルディスク上にcloneする。以下のファイルがある。
-* Vagrantfile: CentOS 6.5を起動し、ネットワーク周りの設定を行い、setup.shを実行する
-* setup.sh: Oracle Linuxへの変換、パッケージ追加、ユーザ追加＆等価設定など
-* ssh.expect: SSH等価設定用 expect スクリプト
-* *.rsp: GI/DB/DBCA用のレスポンスファイル
+本レポジトリをローカルディスク上にcloneする。先ほどの"grid"と"oracle"サブディレクトリを本ディレクトリ内にMOVEする。
 
 ```
 $ git clone https://github.com/yasushiyy/vagrant-oracle12c-rac
@@ -71,20 +83,6 @@ config.proxy.http     = "http://proxy:port"
 config.proxy.https    = "http://proxy:port"
 config.proxy.no_proxy = "localhost,127.0.0.1"
 ```
-
-Grid Infrastructure / Database のバイナリを以下からダウンロード。上記 Vagrantfile 等と同じディレクトリに解凍する。"grid"と"database"というサブディレクトリになるはず。
-
-http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
-
-Linux x86-64 → "See All" を選択
-
-* "database" サブディレクトリ
-  * linuxamd64_12c_database_1of2.zip
-  * linuxamd64_12c_database_2of2.zip
-
-* "grid" サブディレクトリ
-  * linuxamd64_12c_grid_1of2.zip
-  * linuxamd64_12c_grid_2of2.zip
 
 起動する。Vagrantfile, setup.shの内容が実行されるので、そこそこ時間がかかる。
 

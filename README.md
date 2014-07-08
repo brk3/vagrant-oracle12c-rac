@@ -31,7 +31,23 @@ as of 7/7/2014
 192.168.102.12  node2-priv
 ```
 
-## Prepare
+## Download
+
+Download the Grid Infrastructure / Database binary form below.  Unzip to the subdirectory name "grid" and "database".
+
+http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
+
+go to Linux x86-64 -> "See All"
+
+* into "database" subdirectory
+  * linuxamd64_12c_database_1of2.zip
+  * linuxamd64_12c_database_2of2.zip
+
+* into "grid" subdirectory
+  * linuxamd64_12c_grid_1of2.zip
+  * linuxamd64_12c_grid_2of2.zip
+
+## Install OS
 
 If you are behing a proxy, install vagrant-proxyconf.
 
@@ -53,11 +69,7 @@ Install VirtualBox plugin.
 $ vagrant plugin install vagrant-vbguest
 ```
 
-Clone this repository to the local directory.
-* Vagrantfile: uses CentOS 6.5, reads setup.sh
-* setup.sh: converts into Oracle Linux, installs necessary packages, creates users
-* ssh.expect: ssh user equivalence setup script
-* *.rsp: response files for GI/DB/DBCA
+Clone this repository to the local directory.  Move the "grid" and "database" directories to the same folder.
 
 ```
 $ git clone https://github.com/yasushiyy/vagrant-oracle12c-rac
@@ -71,20 +83,6 @@ config.proxy.http     = "http://proxy:port"
 config.proxy.https    = "http://proxy:port"
 config.proxy.no_proxy = "localhost,127.0.0.1"
 ```
-
-Download the Grid Infrastructure / Database binary form below.  Unzip to the same directory as above.  It should have the subdirectory name "grid" and "database".
-
-http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
-
-go to Linux x86-64 -> "See All"
-
-* into "database" subdirectory
-  * linuxamd64_12c_database_1of2.zip
-  * linuxamd64_12c_database_2of2.zip
-
-* into "grid" subdirectory
-  * linuxamd64_12c_grid_1of2.zip
-  * linuxamd64_12c_grid_2of2.zip
 
 Boot.  This might take a long time.
 
