@@ -8,6 +8,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # copied directly from vagrant init chef/centos-6.5
   config.vm.box = "chef/centos-6.5"
 
+  # auto-update guest additions so we can ssh into the box
+  config.vbguest.auto_update = true
+
   # vm nodes
   config.vm.define :node2 do |node2|
     node2.vm.hostname = "node2"
